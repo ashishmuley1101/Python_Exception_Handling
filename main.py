@@ -1,13 +1,13 @@
 
-# Catching Specific Exceptions using multiple except block
+# Python try with else clause
 
-# The try...except...except block is used to handle exceptions in Python
+# else keyword to define a block of code to be executed if no errors were raised.
 # Syntax : try:
 #               code that may cause exception
 #          except exception_name1:
 #               code to run when exception_name1 occurs
-#          except exception_name2:
-#               code to run when exception_name2 occurs
+#          else:
+#               code to run else block
 
 try:
     numerator = int(input("Enter the numerator : "))
@@ -24,3 +24,7 @@ except ZeroDivisionError:
 
 except IndexError:
     print("Invalid index number enter try again.")
+
+else:
+    sum = sum(list)
+    print("Sum of list number : ", sum)

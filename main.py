@@ -1,13 +1,15 @@
 
-# Python try with else clause
+# Python try...except...finally block
 
-# else keyword to define a block of code to be executed if no errors were raised.
+# In Python, the finally block is always executed no matter whether there is an exception or not.
+# The finally block is optional. And, for each try block, there can be only one finally block.
+
 # Syntax : try:
 #               code that may cause exception
 #          except exception_name1:
 #               code to run when exception_name1 occurs
-#          else:
-#               code to run else block
+#          finally:
+#               code run executed no matter whether there is an exception or not.
 
 try:
     numerator = int(input("Enter the numerator : "))
@@ -25,6 +27,5 @@ except ZeroDivisionError:
 except IndexError:
     print("Invalid index number enter try again.")
 
-else:
-    sum = sum(list)
-    print("Sum of list number : ", sum)
+finally:
+    print("This is finally block.")

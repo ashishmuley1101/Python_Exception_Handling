@@ -1,11 +1,13 @@
 
-# Python Exception Handling using try and except block
+# Catching Specific Exceptions using multiple except block
 
-# The try...except block is used to handle exceptions in Python
+# The try...except...except block is used to handle exceptions in Python
 # Syntax : try:
 #               code that may cause exception
-#          except:
-#               code to run when exception occurs
+#          except exception_name1:
+#               code to run when exception_name1 occurs
+#          except exception_name2:
+#               code to run when exception_name2 occurs
 
 try:
     numerator = int(input("Enter the numerator : "))
@@ -13,5 +15,12 @@ try:
     result = numerator / denominator
     print(result)
 
-except:
-    print("Denominator cannot be zero 0 ")
+    list = [1, 2, 3, 4, 5]
+    index = int(input("Enter the index num : "))
+    print(list[index])
+
+except ZeroDivisionError:
+    print("Denominator cannot be zero 0.")
+
+except IndexError:
+    print("Invalid index number enter try again.")

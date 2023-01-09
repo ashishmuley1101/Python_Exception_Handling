@@ -1,31 +1,35 @@
 
-# Python try...except...finally block
+# Python User-Defined Exception(Custom Exceptions)
 
-# In Python, the finally block is always executed no matter whether there is an exception or not.
-# The finally block is optional. And, for each try block, there can be only one finally block.
+# In Python, we can define custom exceptions by creating a new class that is derived from
+# the built-in Exception class.
 
-# Syntax : try:
-#               code that may cause exception
-#          except exception_name1:
-#               code to run when exception_name1 occurs
-#          finally:
-#               code run executed no matter whether there is an exception or not.
+# Syntax : class CustomError(Exception):
+#               ...
+#               pass
+#
+#           try:
+#               ...
+#
+#           except CustomError:
+#                 ...
+
+class InvalidAgeException(Exception):  # define Python user-defined exceptions
+    "Raised when the input value is less than 18"
+    pass
+
+# you need to guess this number
+number = 18
 
 try:
-    numerator = int(input("Enter the numerator : "))
-    denominator = int(input("Enter the denominator : "))
-    result = numerator / denominator
-    print(result)
+    input_num = int(input("Enter a age for voting : "))
+    if input_num < number:
+        raise InvalidAgeException
+    else:
+        print("Eligible to Voting.")
 
-    list = [1, 2, 3, 4, 5]
-    index = int(input("Enter the index num : "))
-    print(list[index])
-
-except ZeroDivisionError:
-    print("Denominator cannot be zero 0.")
-
-except IndexError:
-    print("Invalid index number enter try again.")
+except InvalidAgeException:
+    print("Exception occurred: Enter Invalid Age")
 
 finally:
     print("This is finally block.")
